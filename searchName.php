@@ -1,48 +1,48 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "root"; // Check if your XAMPP/MAMP password is "" or "root"
+$password = "root"; 
 $database = "Rock Climbing Customer Management";
 
 $climberId = $_POST['climberId'] ?? null;
-
 $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// 1. Prepare the query to get all columns
 $sql = "SELECT name, sex, dob FROM Climber WHERE climberId = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $climberId);
 $stmt->execute();
 $result = $stmt->get_result();
 
-echo "<h2>Search Results</h2>";
+// Link CSS and HTML
+echo "<!DOCTYPE html><html><head><link rel='stylesheet' href='simple-style.css'></head><body>";
+echo "<div class='container'>";
+echo "<h1>Search Results</h1>";
 
 if ($row = $result->fetch_assoc()) {
-    // 2. Calculate Age from DOB
     $birthDate = new DateTime($row['dob']);
     $today = new DateTime();
-    $age = $today->diff($birthDate)->y; // Gets the difference in years
-
-    // 3. Translate 'M'/'F' to full words
+    $age = $today->diff($birthDate)->y;
     $gender = ($row['sex'] == 'M') ? "Male" : "Female";
 
-    // 4. Display the "Profile"
-    echo "<div style='border: 1px solid #ccc; padding: 15px; width: 300px;'>";
-    echo "<strong>Name:</strong> " . htmlspecialchars($row['name']) . "<br>";
-    echo "<strong>Gender:</strong> " . $gender . "<br>";
-    echo "<strong>Age:</strong> " . $age . " years old<br>";
-    echo "<strong>Birthdate:</strong> " . $row['dob'];
-    echo "</div>";
+    echo "<table class='climber-table'>";
+    echo "<thead><tr><th colspan='2'>Climber Profile</th></tr></thead>";
+    echo "<tbody>";
+    echo "<tr><td><b>Name</b></td><td>" . htmlspecialchars($row['name']) . "</td></tr>";
+    echo "<tr><td><b>Gender</b></td><td>" . $gender . "</td></tr>";
+    echo "<tr><td><b>Age</b></td><td>" . $age . " years old</td></tr>";
+    echo "<tr><td><b>Birthdate</b></td><td>" . $row['dob'] . "</td></tr>";
+    echo "</tbody></table>";
 } else {
-    echo "No climber found with ID: " . htmlspecialchars($climberId);
+    echo "<div class='message error'>No climber found with ID: " . htmlspecialchars($climberId) . "</div>";
 }
+
+echo "<div class='link-section'><a href='searchClimber.html'>Search again</a></div>";
+echo "</div></body></html>";
 
 $stmt->close();
 $conn->close();
-
-echo "<br><a href='searchClimber.html'>Search again</a>";
 ?>
