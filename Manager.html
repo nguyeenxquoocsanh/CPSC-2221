@@ -1,0 +1,51 @@
+<!--
+Milestone 4
+
+Haiden Murphy
+Jauseff Dait
+Nick Nguyen
+Khushi
+
+This file contains the html web page for Manager. This connects to the 
+-->
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Manager Functions</title>
+               <link rel="stylesheet" href="Manager.css">
+        </head>
+
+    <body>
+        <!-- COURSE HEADER -->
+        <div class="course-header">
+            <h3>CPSC 2221 Jauseff Khushi Haiden Nick</h3>
+        </div>
+
+
+        <div class="manager-header">
+            <h2>Climbing Gym Manager Functions</h2>
+            <h3>Member Queries</h3>
+        </div>
+        <div class="content-section">
+        <!--member count aggregation -->
+        <form action="manager-count.php" method="post">
+            <input type="hidden" name="action" value="countMembers">
+            <input type="submit" value="Current Member Count">
+        </form>
+
+        <!--equiptment rental aggregation -->
+        <h3>Equiptment Queries</h3>
+        <form action="manager-avg.php" method="post">
+            <input type="hidden" name="action" value="avgRental">
+            <input type="submit" value="Average Rental Duration">
+        </form>
+        <br>
+
+        <!-- equiptment rental nested aggregation -->
+        <form action="manager-aboveavg.php" method="post">
+            <input type="hidden" name="action" value="aboveAverageRenters">
+            <input type="submit" value="Climbers Above Average Rental Duration">
+        </form>
+        </div>
+    </body>
+</html>

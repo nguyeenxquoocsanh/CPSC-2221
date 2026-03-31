@@ -1,0 +1,59 @@
+/* 
+Milestone 4
+
+Haiden Murphy
+Jauseff Dait
+Nick Nguyen
+Khushi
+
+This file contains the css style page for the Manager page 
+*/
+
+
+/* NAV */
+.nav {
+    background-color: white;
+    padding: 15px 30px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    background-color: #7a8fa0;
+}
+
+/* COURSE HEADER */
+.course-header {
+    background-color: #4a5f6f;
+    padding: 15px 30px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.course-header h3 {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.manager-header {
+    background-color: white;
+    padding: 20px 20px 10px 20px;
+    text-align: left;
+    color: #333;
+}
+
+.content-section {
+    background-color: white;
+    padding: 20px 20px 40px 20px;
+    text-align: left;
+    color: #333;
+}
