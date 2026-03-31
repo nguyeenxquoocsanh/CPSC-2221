@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Sign Up — Rock Climbing Gym</title>
+    <link rel="stylesheet" href="unified.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Class Sign Up</h1>
+
+        <form method="POST" action="ClassSignup.php">
+            <div class="form-group">
+                <label for="climber_id">Climber ID:</label>
+                <input type="number" id="climber_id" name="climber_id" placeholder="e.g. 101" required>
+            </div>
+            <div class="form-group">
+                <label for="class_id">Class ID:</label>
+                <input type="number" id="class_id" name="class_id" placeholder="e.g. 1" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div class="link-section">
+            <a href="index.html">← Back to Main</a>
+        </div>
+    </div>
+</body>
+</html>

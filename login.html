@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Climbing Customer Management System | Log In</title>
+  <link rel="stylesheet" href="unified.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Log In</h1>
+    <!-- TODO: create login.php to verify climberId and password against DB -->
+    <form id="loginForm" method="POST" action="login.php">
+      <div class="form-group">
+        <label for="climberId">Climber ID:</label>
+        <input type="text" id="climberId" name="climberId" placeholder="Enter your Climber ID" required>
+      </div>
+
+      <div class="form-group">
+        <!-- Fixed: type="password" so the input is masked -->
+        <label for="pw">Password:</label>
+        <input type="password" id="pw" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="btn">Log In</button>
+    </form>
+  </div>
+</body>
+</html>

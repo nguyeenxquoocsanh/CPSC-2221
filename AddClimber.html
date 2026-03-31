@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Climber - Rock Climbing Customer Management</title>
+    <link rel="stylesheet" href="unified.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-left">
+            <h2>Add New Climber</h2>
+
+            <form id="addClimberForm" method="POST" action="add_climber.php">
+                <label for="climberId">Climber ID:</label>
+                <input type="number" id="climberId" name="climber_id" placeholder="Enter Climber ID" required>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required>
+
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="">-- Select --</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </form>
+        </div>
+
+        <div class="form-right">
+            <button type="submit" form="addClimberForm">Add Climber</button>
+        </div>
+    </div>
+</body>
+</html>
